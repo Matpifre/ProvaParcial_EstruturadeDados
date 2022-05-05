@@ -17,9 +17,11 @@ public class Lista {
 	private void inserirPrioridade(No aux) {
 		if(aux.cor.equals("amarelo"))
 		{
-			No aux2 = inicio;
 			No verde=null;
 			No amarelo=null;
+			No aux2 = inicio;
+			
+			
 			if(inicio == null)
 			{
 				inicio = fim = aux;
@@ -29,7 +31,7 @@ public class Lista {
 				inicio = aux;
 			}else
 			{
-				while(aux2!=null)
+				do
 				{
 					if(aux2.cor.equalsIgnoreCase("verde"))
 					{
@@ -39,7 +41,7 @@ public class Lista {
 					amarelo = aux2;
 					aux2 = aux2.prox;
 					
-				}
+				}while(aux2!=null);
 				amarelo.prox = aux;
 				aux.prox = verde;	
 			}
